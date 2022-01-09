@@ -3,23 +3,23 @@ const addBtn = document.querySelector(".inputField button");
 const todoList = document.querySelector(".todoList");
 const deleteAllBtn = document.querySelector(".footer button");
 
-inputBox.onkeyup = ()=>{
+inputBox.onkeyup = () => {
   let userEnteredValue = inputBox.value;
-  if(userEnteredValue.trim() != 0){
+  if (userEnteredValue.trim() != 0) {
     addBtn.classList.add("active");
-  }else{
+  } else {
     addBtn.classList.remove("active");
   }
 }
 
 showTasks();
 
-addBtn.onclick = ()=>{
+addBtn.onclick = () => {
   let userEnteredValue = inputBox.value;
   let getLocalStorageData = localStorage.getItem("New Todo");
-  if(getLocalStorageData == null){
+  if (getLocalStorageData == null) {
     listArray = [];
-  }else{
+  } else {
     listArray = JSON.parse(getLocalStorageData);
   }
   listArray.push(userEnteredValue);
@@ -28,18 +28,18 @@ addBtn.onclick = ()=>{
   addBtn.classList.remove("active");
 }
 
-function showTasks(){
+function showTasks() {
   let getLocalStorageData = localStorage.getItem("New Todo");
-  if(getLocalStorageData == null){
+  if (getLocalStorageData == null) {
     listArray = [];
-  }else{
-    listArray = JSON.parse(getLocalStorageData); 
+  } else {
+    listArray = JSON.parse(getLocalStorageData);
   }
   const pendingTasksNumb = document.querySelector(".pendingTasks");
   pendingTasksNumb.textContent = listArray.length;
-  if(listArray.length > 0){
+  if (listArray.length > 0) {
     deleteAllBtn.classList.add("active");
-  }else{
+  } else {
     deleteAllBtn.classList.remove("active");
   }
   let newLiTag = "";
@@ -50,7 +50,7 @@ function showTasks(){
   inputBox.value = "";
 }
 
-function deleteTask(index){
+function deleteTask(index) {
   let getLocalStorageData = localStorage.getItem("New Todo");
   listArray = JSON.parse(getLocalStorageData);
   listArray.splice(index, 1);
@@ -58,14 +58,18 @@ function deleteTask(index){
   showTasks();
 }
 
-deleteAllBtn.onclick = ()=>{
+deleteAllBtn.onclick = () => {
   let getLocalStorageData = localStorage.getItem("New Todo");
-  if(getLocalStorageData == null){
+  if (getLocalStorageData == null) {
     listArray = [];
-  }else{
+  } else {
     listArray = JSON.parse(getLocalStorageData);
     listArray = [];
   }
   localStorage.setItem("New Todo", JSON.stringify(listArray));
   showTasks();
+}
+function cerrarSesion() {
+  window.location.href = "index.html";
+
 }

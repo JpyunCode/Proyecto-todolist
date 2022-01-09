@@ -116,7 +116,7 @@ body{
     outline: none;
     color: #fff;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 16px;    
     margin-left: 5px;
     background: #8E49E8;
     cursor: pointer;
@@ -129,4 +129,18 @@ body{
     opacity: 1;
     pointer-events: auto;
 }
-  
+.cont-botonlogout{
+    padding: 20px;
+    text-align: right;
+}
+.btn-logout{
+    
+    letter-spacing: 1px;
+    color: white;
+    border-top: 1px rgb(198, 157, 250) solid;
+    border-bottom: 1px rgb(64, 3, 155) solid;
+    padding: 10px;
+    background-color: blueviolet;
+    box-shadow: rgb(4, 172, 163) 2px 2px 2px;
+    
+}
