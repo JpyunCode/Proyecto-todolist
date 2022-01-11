@@ -21,4 +21,6 @@ else
 }
 $queryusuario->close();
 $conn->close();
+$correo=null;
+$pass=null;
 ?>
