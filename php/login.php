@@ -13,7 +13,10 @@ $nr = $queryusuario->num_rows;
 	
 if ($nr == 1)  
 { 
-    echo	"<script> alert('Usuario logueado.');window.location= '../main.html' </script>";
+    echo	"<script> alert('Usuario logueado.');</script>";
+    session_start();
+    $_SESSION["user_email"]=$correo;
+    header("Location: ../main.php");
 }
 else
 {

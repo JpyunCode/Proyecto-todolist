@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (empty($_SESSION["user_email"])) {
+  echo "<script> alert('Debe iniciar sesion para acceder'); </script>";
+  header("Location: index.html");
+  exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,9 +25,9 @@
 <body>
   <div class="cont-botonlogout">
 
-    <label for="">
-      <button class="btn-logout btn" type="button" onclick="cerrarSesion()">Cerrar Sesi&oacuten</button>
-    </label>
+    <form action="./php/destruir_sesion.php">
+      <input class="btn-logout btn" type="submit" name="sesionDestroy" value="Cerrar Sesión"/>
+    </form>
   </div>
 
   <div class="wrapper">
