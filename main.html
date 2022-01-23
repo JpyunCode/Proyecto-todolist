@@ -26,7 +26,7 @@ if (empty($_SESSION["user_email"])) {
   <div class="cont-botonlogout">
 
     <form action="./php/destruir_sesion.php">
-      <input class="btn-logout btn" type="submit" name="sesionDestroy" value="Cerrar Sesión"/>
+      <input class="btn-logout btn" type="submit" name="sesionDestroy" value="Cerrar Sesión" />
     </form>
   </div>
 
@@ -42,6 +42,23 @@ if (empty($_SESSION["user_email"])) {
     <div class="footer">
       <span>Tienes <span class="pendingTasks"></span> tareas pendientes</span>
       <button>Limpiar todo</button>
+    </div>
+  </div>
+  <div class="fondo_transparente">
+    <div class="modal">
+      <div class="modal_cerrar">
+        <span>x</span>
+      </div>
+      <div class="modal_titulo">Editar Tarea</div>
+      <div class="modal_mensaje">
+        <p>ingresar nueva Tarea</p>
+        <input type="text" id="nuevaTarea">
+      </div>
+      <div class="modal_botones">
+        <a href="" class="boton" onclick="editTask()">ACEPTAR</a>
+        <a href="" class="boton">CANCELAR</a>
+
+      </div>
     </div>
   </div>
   <!-- JavaScript Bundle with Popper -->
