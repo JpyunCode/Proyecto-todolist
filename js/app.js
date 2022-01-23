@@ -52,6 +52,10 @@ function showTasks() {
   inputBox.value = "";
 }
 function showEditTask(index) {
+  document.getElementsByClassName("modal_cerrar")[0].addEventListener("click", function () {
+    document.getElementsByClassName("fondo_transparente")[0].style.display = "none";
+    document.getElementById("nuevaTarea").value = "";
+  })
   document.getElementsByClassName("fondo_transparente")[0].style.display = "block";
   numeroTarea = index;
 
@@ -62,11 +66,8 @@ function editTask() {
   let getLocalStorageData = localStorage.getItem("New Todo");
   listArray = JSON.parse(getLocalStorageData);
   lenArray = listArray.length;
-  console.log(listArray);
   listArray[numeroTarea] = d;
   localStorage.setItem("New Todo", JSON.stringify(listArray));
-
-  console.log(listArray);
   showTasks();
 }
 function deleteTask(index) {
