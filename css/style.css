@@ -87,17 +87,22 @@ body{
 }
 .todoList li .icon{
     position: absolute;
-    right: -45px;
+    right: -80px;
     top: 50%;
     transform: translateY(-50%);
     background: #e74c3c;
-    width: 45px;
-    text-align: center;
+    width: 80px;
+    /* text-align: center; */
     color: #fff;
     padding: 10px 15px;
     border-radius: 0 3px 3px 0;
     cursor: pointer;
     transition: all 0.2s ease;
+}
+#icon{
+    align-items: center;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 .todoList li:hover .icon{
     right: 0px;

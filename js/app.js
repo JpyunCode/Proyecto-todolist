@@ -44,9 +44,9 @@ function showTasks() {
   }
   let newLiTag = "";
   listArray.forEach((element, index) => {
-    newLiTag += `<li>${element}<span class="icon" ><i class="bi bi-trash-fill" onclick="deleteTask(${index})">
-    </i><span class="icon2"><i class="bi bi-pencil-fill" onclick="showEditTask(${index})"></i>
-    </span></span></li>`;
+    newLiTag += `<li>${element}<span class="icon" ><i class="bi bi-trash-fill" id="icon" onclick="deleteTask(${index})">
+    </i><i class="bi bi-pencil-fill" id="icon" onclick="showEditTask(${index})"></i>
+    </span></li>`;
   });
   todoList.innerHTML = newLiTag;
   inputBox.value = "";
