@@ -1,11 +1,3 @@
-<?php
-session_start();
-if (empty($_SESSION["user_email"])) {
-  echo "<script> alert('Debe iniciar sesion para acceder'); </script>";
-  header("Location: index.html");
-  exit();
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,14 +12,42 @@ if (empty($_SESSION["user_email"])) {
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
   <link rel="stylesheet" href="./css/style.css">
 
+  <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+  <script>
+    const config = {
+      apiKey: "AIzaSyBv4DIYk042Tc3x079VQeZsbfneR3CFd2Y",
+      authDomain: "to-do-list-2d779.firebaseapp.com",
+      projectId: "to-do-list-2d779",
+      storageBucket: "to-do-list-2d779.appspot.com",
+      messagingSenderId: "43464913148",
+      appId: "1:43464913148:web:41898f44397842f6182779"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script>
+    function verificar(){
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // El usuario está logueado, realiza acciones aquí
+        } else {
+          console.log("usuario nullo");
+          location.replace("index.html");
+        }
+
+      });
+    };
+    verificar();
+  </script>
+
 </head>
 
 <body>
   <div class="cont-botonlogout">
 
-    <form action="./php/destruir_sesion.php">
+    <!-- <form action="./php/destruir_sesion.php">
       <input class="btn-logout btn" type="submit" name="sesionDestroy" value="Cerrar Sesión" />
-    </form>
+    </form> -->
+    <button class="btn-logout btn" onclick="cerrar()">Cerrar Sesión</button>
   </div>
 
   <div class="wrapper">
@@ -66,6 +86,7 @@ if (empty($_SESSION["user_email"])) {
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
   <script src="./js/app.js"></script>
+  <script src="./js/logout.js"></script>
 </body>
 
 </html>
