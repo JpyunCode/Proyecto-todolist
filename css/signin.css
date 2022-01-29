@@ -4,19 +4,55 @@ body {
 }
 
 body {
-  display: flex;
+  text-align: center;
+  display: block;
   align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 0px;
+  padding-bottom: 0px;
   background: linear-gradient(to bottom,rgba(104, 234, 204),rgba(73, 123, 232) 100%);
 }
 
+#particles-js{
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+#container{
+  position: fixed;
+  text-align: center;
+  z-index: 99;
+  width: 100%;
+  margin: 10px auto;
+  background-color: transparent;
+ 
+
+}
+#containerInner{
+  margin: 10px auto;
+  background-color:transparent;
+}
+.title-main{
+  
+  margin: 10px;
+  color:rgb(1, 77, 87);
+  font-weight: 600;
+  margin-top: 0px;
+  padding: 30px;
+  font-size: 5em;
+  letter-spacing: 15px;
+  text-shadow:5px 5px 5px rgb(18, 152, 189) ;
+  
+
+  
+}
 .form-signin {
+  
+ 
   width: 100%;
   max-width: 330px;
   padding: 15px;
   height: 260px;
-  margin: auto;
+  margin: 10px auto;
   background: rgba(255, 255, 255, 0.7);
   border-radius: 5px;
 }
