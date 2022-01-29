@@ -21,16 +21,27 @@ signinForm.addEventListener('submit', function(e){
         .catch((error) => {
             var errorCode = error.code;
             var errorMessage = error.message;
+            console.log(errorCode)
+            console.log(errorMessage)
             // ..
-            errorSign();
+            errorSign(errorCode);
         });
 });
 
-function errorSign(){
-    var contenido = document.getElementById('respuesta');
-    contenido.innerHTML=`
-    <div class="alert alert-danger" role="alert">
-        El usuario ya existe
-    </div>
-    `
+function errorSign(errorCode){
+    if(errorCode=='auth/weak-password'){
+        var contenido = document.getElementById('respuesta');
+        contenido.innerHTML=`
+        <div class="alert alert-danger" role="alert">
+            la contraseña debe tener mas de 6 caracteres
+        </div>
+        `
+    }else{
+        var contenido = document.getElementById('respuesta');
+        contenido.innerHTML=`
+        <div class="alert alert-danger" role="alert">
+            El usuario ya existe
+        </div>
+        `
+    }
 }
