@@ -25,3 +25,8 @@ function temaDiseñoBlack() {
     }
 
 }
+
+
+function abrirRegistro() {
+    window.location = "./signin.html";
+}
