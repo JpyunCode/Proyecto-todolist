@@ -32,13 +32,15 @@
 
     <div id="container">
         <div id="containerInner">
-
+            <div class="tema-diseño" onclick="temaDiseñoBlack()"></div>
             <div class="title-main">Lupaucar.Corp </div>
 
             <form class="form-signin" id="form-login">
-                <h1 class="h3 mb-3 fw-normal"> ToDoLista</h1>
-
-                <div class="form-floating">
+                <h1 id="todolist-"> To do List</h1>
+                <div id="imagenLogo">
+                    <img src="./assets/tareasLogo2.png" alt="" width="50" height="50">
+                </div>
+                <div class="form-floating ">
                     <input type="email" class="form-control" id="user_email" name="user_email"
                         placeholder="name@example.com" required>
                     <label for="user_email">Correo electronico</label>
@@ -48,10 +50,14 @@
                         required>
                     <label for="password">Contraseña</label>
                 </div>
-                <button class="w-50 btn btn-lg btn-primary" type="submit">Login</button>
+                <button class="w-50 btn btn-lg btn-primary" type="submit" id="button-Login">Login</button>
                 <a class="signin w-50" href="./signin.html">Ir a Registrarse</a>
                 <div class="mt-2"></div>
-                <button class="w-100 btn btn-lg btn-primary" id="googleAccess" type="button">Iniciar con Google</button>
+                <div id="containerButton">
+                    <button class="w-100 btn btn-lg btn-primary" id="googleAccess" type="button"><img
+                            src="./assets/logoGoogle.png" alt="" width="50" height="50">
+                    </button>
+                </div>
                 <div class="alert" id="respuesta"></div>
             </form>
         </div>
@@ -64,6 +70,7 @@
     <script src="./js/particulas.js"></script>
     <script src="./js/firebase_auth.js"></script>
     <script src="./js/auth_google.js"></script>
+    <script src="./js/temaDiseñoBlack.js"></script>
 </body>
 
 </html>
