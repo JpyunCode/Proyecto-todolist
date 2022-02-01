@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="./css/style.css">
 
   <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase-firestore.js"></script>
   <script>
     const config = {
       apiKey: "AIzaSyBv4DIYk042Tc3x079VQeZsbfneR3CFd2Y",
@@ -58,10 +59,10 @@
       <div class="wrapper">
         <header>Registre sus tareas</header>
         <div class="inputField">
-          <input type="text" placeholder="Agregue nueva tarea">
+          <input id="tarea" type="text" placeholder="Agregue nueva tarea">
           <button><i class="bi bi-plus-lg"></i></button>
         </div>
-        <ul class="todoList">
+        <ul class="todoList" id="todolist">
           <!-- todas las tareas se almacenan aqui -->
         </ul>
         <div class="footer">
@@ -80,10 +81,11 @@
       <div class="modal_titulo">Editar Tarea</div>
       <div class="modal_mensaje">
         <p>ingresar nueva Tarea</p>
+        <input type="hidden" id="keyTarea">
         <input type="text" id="nuevaTarea">
       </div>
       <div class="modal_botones">
-        <a href="" class="boton" onclick="editTask()">ACEPTAR</a>
+        <a href="" class="boton" id="botonAceptar" onclick="editTask()">ACEPTAR</a>
         <a href="" class="boton">CANCELAR</a>
 
       </div>
@@ -97,8 +99,9 @@
   <script src="./js/particles.min.js"></script>
   <script src="./js/particulas_black.js"></script>
 
-  <script src="./js/app.js"></script>
+  <!-- <script src="./js/app.js"></script> -->
   <script src="./js/logout.js"></script>
+  <script src="./js/firestore_db.js"></script>
 </body>
 
 </html>
