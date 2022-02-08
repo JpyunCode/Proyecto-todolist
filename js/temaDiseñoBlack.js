@@ -1,4 +1,8 @@
+
 var temaBlack = true;
+miStorage = window.localStorage;
+localStorage.setItem("tema", true);
+console.log(temaBlack);
 function temaDiseñoBlack() {
     if (temaBlack) {
         document.getElementsByTagName("body")[0].style.background = "linear-gradient(rgba(2, 2, 2 ),rgba(21, 2, 37  ))";
@@ -9,6 +13,7 @@ function temaDiseñoBlack() {
 
         document.getElementById("button-Login").style.background = "linear-gradient(rgba(58, 58, 59 ), rgba(0, 0, 0))";
 
+        localStorage.setItem("tema", false);
         console.log("false");
         temaBlack = false;
     } else {
@@ -19,8 +24,8 @@ function temaDiseñoBlack() {
 
         document.getElementById("button-Login").style.background = "linear-gradient(rgb(185, 13, 228),rgb(141, 2, 168))";
 
+        localStorage.setItem("tema", true);
         console.log("true");
-
         temaBlack = true;
     }
 
